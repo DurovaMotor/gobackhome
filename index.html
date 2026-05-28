@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HIGHTAC SHOP</title>
+    <meta name="description" content="Catalogue HIGHTAC pour gobackhome.">
+    <link rel="icon" href="./Database/MotorPictures/gobackhome.png?v=generated">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260519-mobileqty">
+    <script src="./assets/js/access-guard.js?v=20260526-configurable-ipgate"></script>
+  </head>
+  <body data-page="home">
+    <div class="site-backdrop" aria-hidden="true">
+      <span class="site-backdrop__orb site-backdrop__orb--one"></span>
+      <span class="site-backdrop__orb site-backdrop__orb--two"></span>
+      <span class="site-backdrop__grid"></span>
+    </div>
+
+    <main class="simple-page simple-page--home">
+      <div class="price-notice" data-i18n="price_notice">Les prix proviennent du fichier Excel téléversé ; le devis final fait foi.</div>
+
+      <header class="top-strip panel-surface panel-surface--header">
+        <div class="top-strip__slot top-strip__slot--left">
+          <div class="top-box top-box--yellow" data-i18n="home_shop">BOUTIQUE HIGHTAC</div>
+        </div>
+        <div class="top-strip__slot top-strip__slot--center">
+          <div class="lang-switch" data-lang-switcher>
+            <button class="lang-switch__button" type="button" data-lang="en">English</button>
+            <button class="lang-switch__button" type="button" data-lang="fr">Français</button>
+            <button class="lang-switch__button" type="button" data-lang="ar">العربية</button>
+          </div>
+        </div>
+        <div class="top-strip__slot top-strip__slot--right">
+          <a class="top-box top-box--cyan" href="https://wa.me/8613602489689" data-i18n="home_whatsapp">
+            WhatsApp
+          </a>
+        </div>
+      </header>
+
+      <section class="home-hero panel-surface panel-surface--hero">
+        <a class="home-bike-link home-bike-link--solo" href="./parts.html" aria-label="Open parts page">
+          <div class="home-bike-link__visual">
+            <div class="home-bike-link__glow" aria-hidden="true"></div>
+            <img class="home-bike-link__image" data-home-image src="./Database/MotorPictures/gobackhome.png?v=generated" alt="gobackhome" draggable="false" data-protected-image>
+          </div>
+          <span class="home-bike-link__label" data-home-model>gobackhome</span>
+        </a>
+      </section>
+    </main>
+
+    <div id="toast-root"></div>
+    <script>
+      (function () {
+        var sources = [
+          "./data/parts-data.js?v=20260519-pricerestored",
+          "./assets/js/app.js?v=generated-ipgate"
+        ];
+
+        function loadScript(src) {
+          return new Promise(function (resolve, reject) {
+            var script = document.createElement("script");
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+          });
+        }
+
+        if (window.HIGHTAC_ACCESS_GUARD && window.HIGHTAC_ACCESS_GUARD.loadScripts) {
+          window.HIGHTAC_ACCESS_GUARD.loadScripts(sources);
+        } else {
+          sources.reduce(function (promise, src) {
+            return promise.then(function () {
+              return loadScript(src);
+            });
+          }, Promise.resolve());
+        }
+      })();
+    </script>
+  </body>
+</html>
